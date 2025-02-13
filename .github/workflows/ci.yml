@@ -51,7 +51,7 @@ jobs:
       - name: "🧹 Type check"
         shell: bash
         run: |
-          pnpm type:check
+          pnpm type-check
 
 #  test:
 #    name: "test"
