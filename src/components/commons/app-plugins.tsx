@@ -3,10 +3,10 @@
 import { Toaster } from 'sonner';
 
 import type { Theme } from '@/enums/theme.enum';
-import useTheme from '@/hooks/useTheme';
+import useDarkMode from '@/hooks/useDarkMode';
 
 const ToasterPlugin = () => {
-	const { theme } = useTheme();
+	const { theme } = useDarkMode();
 	return <Toaster theme={theme as Theme} position="bottom-left" richColors />;
 };
 
