@@ -8,14 +8,14 @@ type RequestOptions = {
 } & Options;
 
 export const request = (defaultOptions?: RequestOptions) => {
-	const { requestMode = 'external' } = defaultOptions || {};
+	const { requestMode = 'self-api' } = defaultOptions || {};
 	let prefixUrl;
 	switch (requestMode) {
 		case 'proxy':
 			prefixUrl = '/proxy-api';
 			break;
 		case 'self-api':
-			prefixUrl = undefined;
+			prefixUrl = '/';
 			break;
 		case 'external':
 			prefixUrl = env.NEXT_PUBLIC_APP_AIP_HOST;
