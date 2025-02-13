@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  scroll-behavior: smooth;
+  scroll-padding-top: 10px;
+}
+
+::selection {
+  background: #8884;
+}

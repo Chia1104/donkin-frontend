@@ -1,0 +1,27 @@
+{
+	"meta": {
+		"title": "Donkin"
+	},
+	"theme": {
+		"label": "主題",
+		"system": "系統",
+		"light": "亮色",
+		"dark": "暗色"
+	},
+	"locale": {
+		"label": "語言",
+		"zh-tw": "繁體中文",
+		"en": "英文"
+	},
+	"action": {
+		"confirm": "確認",
+		"cancel": "取消",
+		"connect-wallet": "连接钱包"
+	},
+	"nav": {
+		"ai-signal": "AI 信號",
+		"whale-ranking": "巨鯨排行",
+		"smart-rankings": "聰明錢排行",
+		"search-placeholder": "搜尋代幣或錢包..."
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"meta": {
+		"title": "Donkin"
+	},
+	"theme": {
+		"label": "Theme",
+		"system": "System",
+		"light": "Light",
+		"dark": "Dark"
+	},
+	"locale": {
+		"label": "Language",
+		"zh-tw": "Traditional Chinese",
+		"en": "English"
+	},
+	"action": {
+		"confirm": "Confirm",
+		"cancel": "Cancel",
+		"connect-wallet": "Connect Wallet"
+	},
+	"nav": {
+		"ai-signal": "AI-Signal",
+		"whale-ranking": "Whale Ranking",
+		"smart-rankings": "Smart Money Rankings",
+		"search-placeholder": "Search for a coin or wallet..."
+	}
+}
