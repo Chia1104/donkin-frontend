@@ -15,7 +15,7 @@ export const env = createEnv({
 		SENTRY_AUTH_TOKEN: z.string().optional(),
 		SENTRY_ORG: z.string().optional(),
 		SENTRY_PROJECT: z.string().optional(),
-		OPENAI_API_KEY: z.string().min(1),
+		OPENAI_API_KEY: z.string().optional(),
 	},
 
 	client: {
