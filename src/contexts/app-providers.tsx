@@ -7,6 +7,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import type { AbstractIntlMessages } from 'next-intl';
 import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider as NextThemeProvider } from 'next-themes';
+import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
 import { useRouter } from '@/i18n/routing';
 import defaultTheme from '@/themes/default';
@@ -37,11 +38,13 @@ const AppProviders = (props: Props) => {
 	return (
 		<NextIntlClientProvider messages={props.messages} timeZone={props.timeZone} locale={props.locale}>
 			<QueryClientProvider client={queryClient}>
-				<NextThemeProvider defaultTheme="system" enableSystem attribute="class">
-					<MuiThemeProvider theme={defaultTheme}>
-						<HeroUIProvider navigate={void router.push}>{props.children}</HeroUIProvider>
-					</MuiThemeProvider>
-				</NextThemeProvider>
+				<NuqsAdapter>
+					<NextThemeProvider defaultTheme="system" enableSystem attribute="class">
+						<MuiThemeProvider theme={defaultTheme}>
+							<HeroUIProvider navigate={void router.push}>{props.children}</HeroUIProvider>
+						</MuiThemeProvider>
+					</NextThemeProvider>
+				</NuqsAdapter>
 			</QueryClientProvider>
 		</NextIntlClientProvider>
 	);

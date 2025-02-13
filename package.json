@@ -19,6 +19,7 @@
 		"ci-check": "pnpm lint && pnpm type-check"
 	},
 	"dependencies": {
+		"@ai-sdk/openai": "^1.1.10",
 		"@emotion/react": "^11.14.0",
 		"@emotion/styled": "^11.14.0",
 		"@heroui/react": "^2.6.14",
@@ -43,6 +44,7 @@
 		"next-intl": "^3.26.3",
 		"next-themes": "^0.4.4",
 		"next-view-transitions": "^0.3.4",
+		"nuqs": "^2.3.2",
 		"openai": "^4.84.0",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
@@ -98,5 +100,6 @@
 	},
 	"lint-staged": {
 		"src/**/*.{js,jsx,ts,tsx,css,scss,md}": "prettier --write --ignore-unknown"
-	}
+	},
+	"packageManager": "pnpm@10.3.0"
 }

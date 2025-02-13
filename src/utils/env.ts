@@ -15,6 +15,7 @@ export const env = createEnv({
 		SENTRY_AUTH_TOKEN: z.string().optional(),
 		SENTRY_ORG: z.string().optional(),
 		SENTRY_PROJECT: z.string().optional(),
+		OPENAI_API_KEY: z.string().min(1),
 	},
 
 	client: {
@@ -39,6 +40,7 @@ export const env = createEnv({
 		NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
 		NEXT_PUBLIC_APP_AIP_HOST: process.env.NEXT_PUBLIC_APP_AIP_HOST,
 		NEXT_PUBLIC_DEFAULT_TIME_ZONE: process.env.NEXT_PUBLIC_DEFAULT_TIME_ZONE || 'Asia/Taipei',
+		OPENAI_API_KEY: process.env.OPENAI_API_KEY,
 	},
 
 	skipValidation: process.env.SKIP_ENV_VALIDATION === 'true' || process.env.SKIP_ENV_VALIDATION === '1',

@@ -11,37 +11,37 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
-			primary: {
-				DEFAULT: '#FF533D',
-			},
-			success: {
-				DEFAULT: '#4caf50',
-				light: '#80e27e',
-				dark: '#087f23',
-				transparent: 'rgba(76,175,80,0.75)',
-			},
-			info: {
-				DEFAULT: '#2196f3',
-				light: '#6ec6ff',
-				dark: '#0069c0',
-				transparent: 'rgba(33,150,243,0.75)',
-			},
-			warning: {
-				DEFAULT: '#ff9800',
-				light: '#ffc947',
-				dark: '#c66900',
-				transparent: 'rgba(255,152,0,0.75)',
-			},
-			danger: {
-				DEFAULT: '#f44336',
-				light: '#ff7961',
-				dark: '#ba000d',
-				transparent: 'rgba(244,67,54,0.75)',
-			},
-		},
-		colors: {
-			root: {
-				DEFAULT: '#343434',
+			colors: {
+				primary: {
+					DEFAULT: '#FF533D',
+				},
+				success: {
+					DEFAULT: '#4caf50',
+					light: '#80e27e',
+					dark: '#087f23',
+					transparent: 'rgba(76,175,80,0.75)',
+				},
+				info: {
+					DEFAULT: '#2196f3',
+					light: '#6ec6ff',
+					dark: '#0069c0',
+					transparent: 'rgba(33,150,243,0.75)',
+				},
+				warning: {
+					DEFAULT: '#ff9800',
+					light: '#ffc947',
+					dark: '#c66900',
+					transparent: 'rgba(255,152,0,0.75)',
+				},
+				danger: {
+					DEFAULT: '#f44336',
+					light: '#ff7961',
+					dark: '#ba000d',
+					transparent: 'rgba(244,67,54,0.75)',
+				},
+				root: {
+					DEFAULT: '#343434',
+				},
 			},
 		},
 	},
@@ -53,14 +53,22 @@ const config: Config = {
 			themes: {
 				dark: {
 					colors: {
-						primary: '#FF533D',
-						background: '#202128',
+						primary: {
+							DEFAULT: '#FF533D',
+						},
+						background: {
+							DEFAULT: '#202128',
+						},
 					},
 				},
 				light: {
 					colors: {
-						primary: '#FF533D',
-						background: '#202128',
+						primary: {
+							DEFAULT: '#FF533D',
+						},
+						background: {
+							DEFAULT: '#202128',
+						},
 					},
 				},
 			},
