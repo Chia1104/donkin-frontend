@@ -14,10 +14,10 @@ import { initDayjs } from '@/utils/dayjs';
 import { env } from '@/utils/env';
 
 export const viewport: Viewport = {
-	themeColor: [
-		{ media: '(prefers-color-scheme: light)', color: '#FF533D' },
-		{ media: '(prefers-color-scheme: dark)', color: '#FF533D' },
-	],
+	// themeColor: [
+	// 	{ media: '(prefers-color-scheme: light)', color: '#FF533D' },
+	// 	{ media: '(prefers-color-scheme: dark)', color: '#FF533D' },
+	// ],
 	colorScheme: 'dark',
 	width: 'device-width',
 };
@@ -30,11 +30,6 @@ export const metadata: Metadata = {
 	},
 	description: 'This is Donkin',
 	creator: 'Donkin',
-	icons: {
-		icon: '/favicon.ico',
-		shortcut: '/favicon.ico',
-		apple: '/favicon.ico',
-	},
 };
 
 export function generateStaticParams() {
@@ -60,7 +55,12 @@ const Layout = async ({
 	const timeZone = await getTimeZone();
 	initDayjs(locale, timeZone);
 	return (
-		<AppLayout locale={locale}>
+		<AppLayout
+			locale={locale}
+			bodyProps={{
+				className: 'bg-root',
+			}}
+		>
 			<AppProviders messages={messages} timeZone={timeZone} locale={locale}>
 				{children}
 				{modal}

@@ -1,10 +1,13 @@
 'use client';
 
-import { Navbar, NavbarContent, NavbarItem, Button, Avatar } from '@heroui/react';
+import { Avatar } from '@heroui/avatar';
+import { Button } from '@heroui/button';
+import { Navbar, NavbarContent, NavbarItem } from '@heroui/navbar';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import { useTranslations } from 'next-intl';
 
+import Footer from '@/components/commons/footer';
 import { Link } from '@/i18n/routing';
 import { noto_sans } from '@/themes/fonts';
 import { cn } from '@/utils/cn';
@@ -52,7 +55,7 @@ const ChatRoomLayout = (props: Props) => {
 							/>
 						}
 					>
-						<span className="text-foreground-400">{t('search-placeholder')}</span>
+						<span className="text-foreground-500">{t('search-placeholder')}</span>
 					</Button>
 				</NavbarContent>
 				<NavbarContent justify="end">
@@ -62,7 +65,8 @@ const ChatRoomLayout = (props: Props) => {
 					<Avatar />
 				</NavbarContent>
 			</Navbar>
-			<main className="flex flex-col items-center justify-center min-h-screen">{props.children}</main>
+			<main className="flex flex-col items-center justify-center min-h-[calc(100vh-72px)]">{props.children}</main>
+			<Footer />
 		</>
 	);
 };

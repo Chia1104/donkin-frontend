@@ -23,5 +23,11 @@
 		"whale-ranking": "Whale Ranking",
 		"smart-rankings": "Smart Money Rankings",
 		"search-placeholder": "Search for a coin or wallet..."
+	},
+	"footer": {
+		"about": "About Donkin",
+		"privacy": "Privacy",
+		"contact": "Contact us",
+		"copyright": "Copyright © {year} Donkin. • All Rights Reserved"
 	}
 }

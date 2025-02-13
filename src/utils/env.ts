@@ -48,5 +48,5 @@ export const env = createEnv({
 	extends: [],
 });
 
-export const IS_PRODUCTION = env.NEXT_PUBLIC_ENV === 'production';
-export const IS_DEV = env.NEXT_PUBLIC_ENV === 'development' || env.NEXT_PUBLIC_ENV === 'local';
+export const IS_PRODUCTION = env.NEXT_PUBLIC_APP_ENV === 'production';
+export const IS_DEV = env.NEXT_PUBLIC_APP_ENV === 'development' || env.NEXT_PUBLIC_APP_ENV === 'local';

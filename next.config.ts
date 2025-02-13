@@ -41,11 +41,9 @@ const nextConfig: NextConfig = {
 	reactStrictMode: true,
 	transpilePackages: ['@t3-oss/env-nextjs', '@t3-oss/env-core'],
 	experimental: {
-		optimizePackageImports: [],
-		// reactCompiler: true,
+		optimizePackageImports: ['@heroui/react'],
+		reactCompiler: true,
 		webpackBuildWorker: true,
-		// dynamicIO: true,
-		// ppr: true,
 		authInterrupts: true,
 	},
 	serverExternalPackages: [],

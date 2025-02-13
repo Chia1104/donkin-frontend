@@ -23,5 +23,11 @@
 		"whale-ranking": "巨鯨排行",
 		"smart-rankings": "聰明錢排行",
 		"search-placeholder": "搜尋代幣或錢包..."
+	},
+	"footer": {
+		"about": "关于 Donkin",
+		"privacy": "隐私权",
+		"contact": "联络我们",
+		"copyright": "Copyright © {year} Donkin. • All Rights Reserved"
 	}
 }

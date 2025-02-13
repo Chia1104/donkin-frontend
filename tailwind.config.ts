@@ -39,6 +39,11 @@ const config: Config = {
 				transparent: 'rgba(244,67,54,0.75)',
 			},
 		},
+		colors: {
+			root: {
+				DEFAULT: '#343434',
+			},
+		},
 	},
 	darkMode: 'class',
 	plugins: [
@@ -49,11 +54,13 @@ const config: Config = {
 				dark: {
 					colors: {
 						primary: '#FF533D',
+						background: '#202128',
 					},
 				},
 				light: {
 					colors: {
 						primary: '#FF533D',
+						background: '#202128',
 					},
 				},
 			},
