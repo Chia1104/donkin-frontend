@@ -6,8 +6,8 @@ import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
 import AppPlugins from '@/components/commons/app-plugins';
-import AppProviders from '@/components/commons/app-providers';
 import AppLayout from '@/components/layouts/app-layout';
+import AppProviders from '@/contexts/app-providers';
 import { routing } from '@/i18n/routing';
 import '@/themes/globals.css';
 import { initDayjs } from '@/utils/dayjs';

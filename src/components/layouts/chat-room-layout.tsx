@@ -6,9 +6,12 @@ import { Navbar, NavbarContent, NavbarItem } from '@heroui/navbar';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import { useTranslations } from 'next-intl';
+import { useQueryState, parseAsStringEnum } from 'nuqs';
 
 import Footer from '@/components/commons/footer';
-import { Link } from '@/i18n/routing';
+import NetworkSelector from '@/components/commons/network-selector';
+import XICon from '@/components/icons/x-icon';
+import { QueryType } from '@/enums/queryType.enum';
 import { noto_sans } from '@/themes/fonts';
 import { cn } from '@/utils/cn';
 
@@ -21,10 +24,12 @@ interface Props {
 const ChatRoomLayout = (props: Props) => {
 	const t = useTranslations('nav');
 	const tAction = useTranslations('action');
+	const [q, setQ] = useQueryState('q', parseAsStringEnum(Object.values(QueryType)));
 
 	return (
 		<>
 			<Navbar
+				position="static"
 				isBordered
 				classNames={{
 					item: ['data-[active=true]:text-primary'],
@@ -33,36 +38,64 @@ const ChatRoomLayout = (props: Props) => {
 				}}
 			>
 				<NavbarContent className={cn('hidden sm:flex gap-4', noto_sans.className)} justify="start">
-					<Donkin />
 					<NavbarItem>
-						<Link href="#">{t('ai-signal')}</Link>
+						<Donkin />
 					</NavbarItem>
-					<NavbarItem>
-						<Link href="#">{t('whale-ranking')}</Link>
-					</NavbarItem>
-					<NavbarItem>
-						<Link href="#">{t('smart-rankings')}</Link>
-					</NavbarItem>
-					<Button
-						variant="bordered"
-						className="rounded-full border-1 w-[200px] justify-between"
-						endContent={
-							<SearchIcon
-								sx={{
-									width: 22,
-									height: 22,
-								}}
-							/>
-						}
+					<NavbarItem
+						className="cursor-pointer"
+						isActive={q === QueryType.AiSignal}
+						onClick={() => setQ(QueryType.AiSignal)}
 					>
-						<span className="text-foreground-500">{t('search-placeholder')}</span>
-					</Button>
+						{t('ai-signal')}
+					</NavbarItem>
+					<NavbarItem
+						className="cursor-pointer"
+						isActive={q === QueryType.WhaleRanking}
+						onClick={() => setQ(QueryType.WhaleRanking)}
+					>
+						{t('whale-ranking')}
+					</NavbarItem>
+					<NavbarItem
+						className="cursor-pointer"
+						isActive={q === QueryType.SmartRankings}
+						onClick={() => setQ(QueryType.SmartRankings)}
+					>
+						{t('smart-rankings')}
+					</NavbarItem>
+					<NavbarItem>
+						<Button
+							variant="bordered"
+							className="rounded-full border-1 w-[200px] justify-between"
+							endContent={
+								<SearchIcon
+									sx={{
+										width: 22,
+										height: 22,
+									}}
+								/>
+							}
+						>
+							<span className="text-foreground-500">{t('search-placeholder')}</span>
+						</Button>
+					</NavbarItem>
 				</NavbarContent>
 				<NavbarContent justify="end">
-					<Button color="primary" className="rounded-full" startContent={<AccountBalanceWalletOutlinedIcon />}>
-						{tAction('connect-wallet')}
-					</Button>
-					<Avatar />
+					<NavbarItem>
+						<Button isIconOnly className="border-1" variant="bordered" radius="full">
+							<XICon className="text-white" />
+						</Button>
+					</NavbarItem>
+					<NavbarItem>
+						<NetworkSelector />
+					</NavbarItem>
+					<NavbarItem>
+						<Button color="primary" className="rounded-full" startContent={<AccountBalanceWalletOutlinedIcon />}>
+							{tAction('connect-wallet')}
+						</Button>
+					</NavbarItem>
+					<NavbarItem>
+						<Avatar />
+					</NavbarItem>
 				</NavbarContent>
 			</Navbar>
 			<main className="flex flex-col items-center justify-center min-h-[calc(100vh-72px)]">{props.children}</main>

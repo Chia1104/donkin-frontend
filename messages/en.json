@@ -29,5 +29,11 @@
 		"privacy": "Privacy",
 		"contact": "Contact us",
 		"copyright": "Copyright © {year} Donkin. • All Rights Reserved"
+	},
+	"chat": {
+		"prompt-placeholder": "Enter any question...",
+		"donkin-title": "The most professional AI investment consultant in the cryptocurrency circle",
+		"donkin-subtitle": "Hello! I am Donkin. You can check the real-time information of the cryptocurrency circle at any time. Please tell me what you are interested in!",
+		"donkin-warning": "Donkin may provide inaccurate information, please verify important information"
 	}
 }

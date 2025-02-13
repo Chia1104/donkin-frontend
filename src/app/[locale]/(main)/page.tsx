@@ -1,9 +1,12 @@
-'use client';
+import { redirect } from '@/i18n/routing';
 
-import React from 'react';
-
-const Page = () => {
-	return <div></div>;
+const Page = async (props: PagePropsWithLocale) => {
+	const id = crypto.getRandomValues(new Uint32Array(1))[0];
+	const locale = (await props.params).locale;
+	redirect({
+		href: `/chat/${id}`,
+		locale,
+	});
 };
 
 export default Page;
