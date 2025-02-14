@@ -17,7 +17,8 @@ export const env = createEnv({
 		SENTRY_PROJECT: z.string().optional(),
 		OPENAI_API_KEY: z.string().optional(),
 		DATABASE_URL: z.string().min(1),
-		INTERNAL_REQUEST_SECRET: z.string().min(1),
+		BETTER_AUTH_URL: z.string().min(1),
+		BETTER_AUTH_SECRET: z.string().min(1),
 	},
 
 	client: {
@@ -28,7 +29,6 @@ export const env = createEnv({
 		NEXT_PUBLIC_GA_ID: z.string().optional(),
 		NEXT_PUBLIC_APP_AIP_HOST: z.string().min(1),
 		NEXT_PUBLIC_DEFAULT_TIME_ZONE: z.string().min(1),
-		NEXT_PUBLIC_ALPHA_AUTH_URL: z.string().optional(),
 	},
 
 	runtimeEnv: {
@@ -45,8 +45,8 @@ export const env = createEnv({
 		NEXT_PUBLIC_DEFAULT_TIME_ZONE: process.env.NEXT_PUBLIC_DEFAULT_TIME_ZONE || 'Asia/Taipei',
 		OPENAI_API_KEY: process.env.OPENAI_API_KEY,
 		DATABASE_URL: process.env.DATABASE_URL,
-		NEXT_PUBLIC_ALPHA_AUTH_URL: process.env.NEXT_PUBLIC_ALPHA_AUTH_URL || 'https://gateway.chia1104.dev/api/v1/auth',
-		INTERNAL_REQUEST_SECRET: process.env.INTERNAL_REQUEST_SECRET,
+		BETTER_AUTH_URL: process.env.BETTER_AUTH_URL,
+		BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
 	},
 
 	skipValidation: process.env.SKIP_ENV_VALIDATION === 'true' || process.env.SKIP_ENV_VALIDATION === '1',

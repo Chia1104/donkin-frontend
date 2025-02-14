@@ -14,7 +14,6 @@ env:
   NODE_ENV: test
   NEXT_PUBLIC_APP_AIP_HOST: https://gateway.chia1104.dev
   DATABASE_URL: postgres://donkin:donkin@localhost:5432/donkin
-  INTERNAL_REQUEST_SECRET: ${{ secrets.INTERNAL_REQUEST_SECRET }}
 
 jobs:
   lint:
