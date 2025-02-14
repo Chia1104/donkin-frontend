@@ -3,21 +3,19 @@ import { unauthorized, forbidden } from 'next/navigation';
 
 import ChatRoomLayout from '@/components/layouts/chat-room-layout';
 import { Role } from '@/enums/role.enum';
-import { authClient } from '@/features/auth/client.rsc';
+import { auth } from '@/features/auth/server';
 
 interface Props {
 	children: React.ReactNode;
 }
 
 const Layout = async (props: Props) => {
-	const session = await authClient.getSession({
-		fetchOptions: {
-			headers: await headers(),
-		},
+	const session = await auth.api.getSession({
+		headers: await headers(),
 	});
-	if (!session.data) {
+	if (!session) {
 		unauthorized();
-	} else if (session.data.user.role !== Role.Admin) {
+	} else if (session.user.role !== Role.Admin) {
 		forbidden();
 	}
 	return <ChatRoomLayout>{props.children}</ChatRoomLayout>;

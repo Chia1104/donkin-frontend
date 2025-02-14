@@ -1,23 +1,20 @@
 import { openai } from '@ai-sdk/openai';
 import { streamText } from 'ai';
-import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';
 
 import { Role } from '@/enums/role.enum';
-import { authClient } from '@/features/auth/client.rsc';
+import { auth } from '@/features/auth/server';
 
 export const maxDuration = 60;
 
 export async function POST(req: Request) {
-	const session = await authClient.getSession({
-		fetchOptions: {
-			headers: await headers(),
-		},
+	const session = await auth.api.getSession({
+		headers: req.headers,
 	});
 
-	if (!session.data) {
+	if (!session) {
 		return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-	} else if (session.data.user.role !== Role.Admin) {
+	} else if (session.user.role !== Role.Admin) {
 		return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
 	}
 
