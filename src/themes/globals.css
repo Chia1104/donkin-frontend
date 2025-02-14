@@ -2,12 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+	.animated-feature-cards::before {
+		@apply pointer-events-none absolute select-none rounded-3xl opacity-0 transition-opacity duration-300 hover:opacity-100;
+		background: radial-gradient(
+			1000px circle at var(--x) var(--y),
+			#f9c851 0,
+			#fca5a5 25%,
+			#fecaca 50%,
+			transparent 80%
+		);
+		z-index: -1;
+		content: '';
+		inset: -1px;
+	}
+
+	.dark .animated-feature-cards::before {
+		background: radial-gradient(
+			1000px circle at var(--x) var(--y),
+			#db2777 0,
+			#c084fc 25%,
+			rgba(255, 255, 255, 0) 50%,
+			transparent 80%
+		);
+	}
+}
+
 html,
 body {
-  scroll-behavior: smooth;
-  scroll-padding-top: 10px;
+	scroll-behavior: smooth;
+	scroll-padding-top: 10px;
 }
 
 ::selection {
-  background: #8884;
+	background: #8884;
 }

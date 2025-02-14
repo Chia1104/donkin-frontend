@@ -1,14 +1,25 @@
 'use client';
 
+import React from 'react';
+
 import { Image } from '@heroui/image';
 import { Select, SelectItem } from '@heroui/select';
 
-export const networks = [
+import SolanaIcon from '@/components/icons/solana-icon';
+
+interface Network {
+	id: number;
+	name: string;
+	value: string;
+	image: string | React.ReactElement;
+}
+
+export const networks: Network[] = [
 	{
 		id: 1,
-		name: 'SQL',
-		value: 'sql',
-		image: '/assets/images/sql-network.png',
+		name: 'SOL',
+		value: 'sol',
+		image: <SolanaIcon className="size-6" />,
 	},
 ];
 
@@ -30,7 +41,11 @@ const NetworkSelector = () => {
 				return items.map(item =>
 					item.data ? (
 						<div key={item.key} className="flex items-center gap-2">
-							<Image alt={item.data.name} className="flex-shrink-0" width={24} height={24} src={item.data.image} />
+							{typeof item.data.image === 'string' ? (
+								<Image alt={item.data.name} className="flex-shrink-0" width={24} height={24} src={item.data.image} />
+							) : (
+								item.data.image
+							)}
 							<div className="flex flex-col">
 								<span>{item.data.name}</span>
 							</div>
@@ -42,7 +57,11 @@ const NetworkSelector = () => {
 			{network => (
 				<SelectItem key={network.value} textValue={network.name}>
 					<div className="flex gap-2 items-center">
-						<Image alt={network.name} className="flex-shrink-0" width={24} height={24} src={network.image} />
+						{typeof network.image === 'string' ? (
+							<Image alt={network.name} className="flex-shrink-0" width={24} height={24} src={network.image} />
+						) : (
+							network.image
+						)}
 						<div className="flex flex-col">
 							<span className="text-small">{network.name}</span>
 						</div>
