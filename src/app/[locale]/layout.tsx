@@ -58,7 +58,7 @@ const Layout = async ({
 		<AppLayout
 			locale={locale}
 			bodyProps={{
-				className: 'bg-root',
+				className: 'bg-root min-h-screen',
 			}}
 		>
 			<AppProviders messages={messages} timeZone={timeZone} locale={locale}>

@@ -6,7 +6,7 @@ const Layout = async (
 	const chatId = (await props.params).id;
 	return (
 		<ChatStoreProvider values={{ chatId, preview: 'this is preview' }}>
-			<div className="grid grid-cols-3 gap-10 overflow-hidden w-full">
+			<div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-10 overflow-hidden w-full">
 				{props.preview}
 				{props.chat}
 			</div>

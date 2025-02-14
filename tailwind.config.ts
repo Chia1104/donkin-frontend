@@ -42,6 +42,18 @@ const config: Config = {
 				root: {
 					DEFAULT: '#343434',
 				},
+				light: {
+					DEFAULT: '#fafafa',
+					light: '#ffffff',
+					dark: '#c7c7c7',
+					transparent: 'rgba(250,250,250,0.75)',
+				},
+				dark: {
+					DEFAULT: '#212121',
+					light: '#484848',
+					dark: '#000000',
+					transparent: 'rgba(33,33,33,0.75)',
+				},
 			},
 		},
 	},
