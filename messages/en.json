@@ -34,6 +34,13 @@
 		"prompt-placeholder": "Enter any question...",
 		"donkin-title": "The most professional AI investment consultant in the cryptocurrency circle",
 		"donkin-subtitle": "Hello! I am Donkin. You can check the real-time information of the cryptocurrency circle at any time. Please tell me what you are interested in!",
-		"donkin-warning": "Donkin may provide inaccurate information, please verify important information"
+		"donkin-warning": "Donkin may provide inaccurate information, please verify important information",
+		"default-prompt": {
+			"title": "Example：",
+			"latest-coins": "最近最火的代币有哪些",
+			"smart-wallet-recommendations": "聪明钱地址都在买什么",
+			"largest-whales": "最近巨鲸地址都在买什么",
+			"info-about": "我想了解 {item} 代币的信息"
+		}
 	}
 }

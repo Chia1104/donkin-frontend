@@ -1,4 +1,4 @@
-export const I18N = {
+export const Locale = {
 	EN: 'en',
 	ZH_TW: 'zh-tw',
 } as const;
