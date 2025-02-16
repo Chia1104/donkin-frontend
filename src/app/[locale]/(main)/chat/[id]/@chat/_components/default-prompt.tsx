@@ -1,11 +1,14 @@
 import { memo, useCallback } from 'react';
 
-import { CardBody } from '@heroui/card';
 import { Image } from '@heroui/image';
 import { useTranslations } from 'next-intl';
 import NextImage from 'next/image';
 
-import ActionCard from '@/components/ui/action-card';
+import CoinIcon from '@/components/icons/coin-icon';
+import HotIcon from '@/components/icons/hot-icon';
+import WaleIcon from '@/components/icons/wale-icon';
+import WalletIcon from '@/components/icons/wallet-icon';
+import ActionCard, { ActionBody } from '@/components/ui/action-card';
 
 interface Props {
 	onAction?: (action: string) => void;
@@ -41,16 +44,16 @@ const DefaultPrompt = ({ currentCoin = 'XX', ...props }: Props) => {
 			<div className="border-1 border-divider flex flex-col gap-2 rounded-lg p-3 w-full not-prose">
 				<p className="text-xs">{t('default-prompt.title')}</p>
 				<ActionCard onPress={() => handleAction(t('default-prompt.latest-coins'))}>
-					<CardBody>{t('default-prompt.latest-coins')}</CardBody>
+					<ActionBody icon={<HotIcon />} label={t('default-prompt.latest-coins')} />
 				</ActionCard>
 				<ActionCard onPress={() => handleAction(t('default-prompt.smart-wallet-recommendations'))}>
-					<CardBody>{t('default-prompt.smart-wallet-recommendations')}</CardBody>
+					<ActionBody icon={<WalletIcon />} label={t('default-prompt.smart-wallet-recommendations')} />
 				</ActionCard>
 				<ActionCard onPress={() => handleAction(t('default-prompt.largest-whales'))}>
-					<CardBody>{t('default-prompt.largest-whales')}</CardBody>
+					<ActionBody icon={<WaleIcon />} label={t('default-prompt.largest-whales')} />
 				</ActionCard>
 				<ActionCard onPress={() => handleAction(t('default-prompt.info-about', { item: 'XX' }))}>
-					<CardBody>{t('default-prompt.info-about', { item: currentCoin })}</CardBody>
+					<ActionBody icon={<CoinIcon />} label={t('default-prompt.info-about', { item: currentCoin })} />
 				</ActionCard>
 			</div>
 		</section>

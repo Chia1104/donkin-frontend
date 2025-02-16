@@ -10,7 +10,7 @@ module.exports = {
 	useTabs: true,
 	bracketSpacing: true,
 	endOfLine: 'auto',
-	importOrder: ['^react$', '<THIRD_PARTY_MODULES>', '^@roswell/(.*)$', '^@/(.*)$', '^[./]'],
+	importOrder: ['^react$', '<THIRD_PARTY_MODULES>', '^@roswell/(.*)$', '^@/(.*)$', '^~/(.*)$', '^[./]'],
 	importOrderSeparation: true,
 	importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
 	plugins: [require.resolve('prettier-plugin-tailwindcss'), require.resolve('@trivago/prettier-plugin-sort-imports')],

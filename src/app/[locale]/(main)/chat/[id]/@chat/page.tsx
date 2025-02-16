@@ -42,7 +42,7 @@ const Messages = ({ children }: { children?: React.ReactNode }) => {
 	}
 
 	return (
-		<section className="flex flex-col gap-5 w-full prose prose-invert justify-start h-full">
+		<section className="flex flex-col gap-5 w-full prose prose-invert justify-start h-full min-w-full">
 			{messages.map((message, index) => {
 				const isLast = index === messages.length - 1;
 				return (
@@ -64,7 +64,7 @@ const Messages = ({ children }: { children?: React.ReactNode }) => {
 const ChatBody = () => {
 	return (
 		<CardBody className="flex flex-col items-center justify-center">
-			<ScrollShadow className="w-full h-[calc(100vh-192px)] flex justify-center items-center">
+			<ScrollShadow className="w-full min-w-full h-[calc(100vh-192px)] flex justify-center items-center">
 				<Messages>
 					<StreamingMessage />
 				</Messages>
@@ -89,7 +89,7 @@ const ChatFooter = () => {
 	});
 
 	return (
-		<CardFooter className="flex flex-col items-center prose prose-invert gap-1 sticky bottom-0">
+		<CardFooter className="flex flex-col items-center prose prose-invert gap-1 sticky bottom-0 min-w-full">
 			<PromptInput value={input} onChange={handleInputChange} onSubmit={handleSubmit} />
 			<p className="text-xs">{t('donkin-warning')}</p>
 		</CardFooter>
