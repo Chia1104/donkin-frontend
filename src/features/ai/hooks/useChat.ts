@@ -494,7 +494,7 @@ export function useChat({
 
 			setControlledInput('');
 		},
-		[controlledInput, generateId, triggerRequest],
+		[controlledInput, generateId, onSubmit, triggerRequest],
 	);
 
 	const handleInputChange = (
