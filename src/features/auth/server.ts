@@ -1,9 +1,9 @@
 import { betterAuth } from 'better-auth';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
 import { admin } from 'better-auth/plugins';
+import * as schema from 'src/database/server/schema';
 
-import { db } from '@/db';
-import * as schema from '@/db/schema';
+import { db } from '@/database/server';
 
 export const auth = betterAuth({
 	appName: 'Donkin',

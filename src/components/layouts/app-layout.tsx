@@ -2,7 +2,7 @@ import type { ReactNode, FC, ComponentPropsWithoutRef } from 'react';
 
 interface Props {
 	children: ReactNode;
-	locale?: I18N;
+	locale?: Locale;
 	htmlProps?: ComponentPropsWithoutRef<'html'>;
 	bodyProps?: ComponentPropsWithoutRef<'body'>;
 }

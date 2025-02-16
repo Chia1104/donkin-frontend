@@ -31,10 +31,11 @@ const ChatRoomLayout = (props: Props) => {
 			<Navbar
 				position="static"
 				isBordered
+				className="bg-background"
 				classNames={{
-					item: ['data-[active=true]:text-primary'],
-					wrapper: ['max-w-[1440px]', 'h-full'],
-					base: ['h-[72px]'],
+					item: 'data-[active=true]:text-primary',
+					wrapper: 'min-w-full h-full',
+					base: 'h-[72px]',
 				}}
 			>
 				<NavbarContent className={cn('hidden sm:flex gap-4', noto_sans.className)} justify="start">

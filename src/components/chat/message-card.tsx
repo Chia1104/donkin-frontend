@@ -105,7 +105,7 @@ const MessageCard = ({
 						messageClassName,
 					)}
 				>
-					<div ref={messageRef} className={'pr-20 text-small flex flex-col gap-2'}>
+					<div ref={messageRef} className={'text-small flex flex-col gap-2'}>
 						{isLoading && message.role === 'assistant' && isCurrent && <CircularProgress size="sm" />}
 						{hasFailed ? (
 							<p>

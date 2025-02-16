@@ -17,7 +17,7 @@ interface Props {
 	children?: React.ReactNode;
 	messages: AbstractIntlMessages;
 	timeZone?: string;
-	locale: I18N;
+	locale: Locale;
 }
 
 let clientQueryClientSingleton: QueryClient | undefined = undefined;
